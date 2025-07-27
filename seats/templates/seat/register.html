@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="{% static 'seat/register.css' %}">
+</head>
+<body>
+
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <fieldset>
+      <legend>Account Info</legend>
+      {{ user_form.as_p }}
+    </fieldset>
+
+    <fieldset>
+      <legend>Student Profile</legend>
+      {{ student_form.as_p }}
+    </fieldset>
+
+    <!-- ✅ Moved inside the form -->
+    <button type="submit" class="btn btn-success">Register</button>
+    <p>Already have an account....</p>
+    <a href="{% url 'login'%}">Login</a>
+  </form>
+</body>
+</html>

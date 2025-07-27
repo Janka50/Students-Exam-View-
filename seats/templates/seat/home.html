@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Students Seating</title>
+    <link rel="stylesheet" href="{% static 'seat/home.css' %}">
+</head>
+<body>
+  <h1>Seating Arrangement</h1>
+<nav class="nav-bar">
+   <div class="top-right-nav">
+  <a href="{% url 'profile' %}">Profile</a></div>
+  <div class="top-left-nav">
+    <form method="post"action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+</div>
+</nav>
+  <table border="1" cellpadding="10">
+    <thead>
+      <tr>
+        <th>Profile Picture</th>
+        <th>Full Name</th>
+        <th>Registration Number</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Exam Hall</th>
+        <th>Seat Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+      <tr>
+        <td><img src="{{ student.profile_picture.url }}" width="60" height="60" /></td>
+        <td>{{ student.user.get_full_name }}</td>
+        <td>{{ student.registration_number }}</td>
+        <td>{{ student.user.email }}</td>
+        <td>{{ student.department }}</td>
+        <td>{{ student.exam_hall }}</td>
+        <td>{{ student.seat_number }}</td>
+      </tr>
+        {% empty %}
+            <tr><td colspan="6">No students registered yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

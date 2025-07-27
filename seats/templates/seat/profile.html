@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'seat/profile.css' %}">
+</head>
+<body> 
+     <div class="top-right-nav">
+  <a href="{% url 'home' %}">Home..</a>
+</div>
+{% if student %}
+    <div class="container">
+        <div class="profile-container text-center">
+            {% if student.profile_picture %}
+                <img src="{{ student.profile_picture.url }}" alt="Profile Picture" class="profile-pic">
+            {% else %}
+                <img src="{% static 'img/default.png' %}" alt="Default Picture" class="profile-pic">
+            {% endif %}
+
+            <h3 class="mb-3">Welcome, {{ student.user.get_full_name|default:student.user.username }}</h3>
+            
+            <ul class="student-info text-start">
+                <li><strong>Username:</strong> {{ student.user.username }}</li>
+                <li><strong>Email:</strong> {{ student.user.email }}</li>
+                <li><strong>Department:</strong> {{ student.department }}</li>
+                <li><strong>Exam Hall:</strong> {{ student.exam_hall|default:"Pending" }}</li>
+                <li><strong>Seat Number:</strong> {{ student.seat_number|default:"Pending" }}</li>
+
+            </ul>
+
+            <div class="mt-4">
+                <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="alert alert-warning text-center">
+        <p>No student profile found. Please complete your registration.</p>
+    </div>
+{% endif %}
+</body>
+</html>

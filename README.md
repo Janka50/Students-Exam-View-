@@ -1,11 +1,11 @@
-# Students-Exam-View-
-# 🪑 Students Exam Seating Arrangement System
+ Students-Exam-View-
+ 🪑 Students Exam Seating Arrangement System
 
 A Django-based web application that allows institutions to register students, assign exam halls and seats, and manage exam seating plans efficiently.
 
----
 
-## 🚀 Features
+
+ 🚀 Features
 
 - 👤 Student Registration with profile photo and department
 - 🔐 Secure login/logout system (Django Auth)
@@ -15,89 +15,86 @@ A Django-based web application that allows institutions to register students, as
 - 🗂 Staff-only access to seat management
 - 🖼 Image upload for student profiles
 
----
 
-## 📸 Screenshots
 
-> _You can add screenshots here later like:_
+ 📸 Screenshots
 
-```
+
 static/img/screenshots/login.png
 static/img/screenshots/profile.png
-```
 
----
 
-## 🛠️ Tech Stack
 
-- **Backend**: Django 5+
-- **Frontend**: HTML5, CSS3, Bootstrap 5, Tailwind (optional)
-- **Database**: SQLite (development), PostgreSQL (production ready)
-- **Deployment Ready**: GitHub / Vercel / PythonAnywhere
+ 🛠️ Tech Stack
 
----
+- Backend: Django 5+
+- Frontend: HTML5, CSS3, Bootstrap 5, Tailwind (optional)
+- Database: SQLite (development), PostgreSQL (production ready)
+- Deployment Ready: GitHub / Vercel / PythonAnywhere
 
-## 🧪 Running Locally
 
-### 🔁 Clone the repository
 
-```bash
+ 🧪 Running Locally
+
+ 🔁 Clone the repository
+
+bash
 git clone git@github.com:Janka50/Students-Exam-View-.git
 cd Students-Exam-View-
-```
 
-### 📦 Create & activate virtual environment
 
-```bash
+📦 Create & activate virtual environment
+
+bash
 python -m venv venv
-# On Windows:
+ On Windows:
 venv\Scripts\activate
-# On macOS/Linux:
+ On macOS/Linux:
 source venv/bin/activate
-```
 
-### 📥 Install dependencies
 
-```bash
+ 📥 Install dependencies
+
+bash
 pip install -r requirements.txt
-```
 
-### 🔐 Setup the database
 
-```bash
+ 🔐 Setup the database
+
+bash
 python manage.py makemigrations
 python manage.py migrate
-```
 
-### 👤 Create superuser
 
-```bash
+👤 Create superuser
+
+bash
 python manage.py createsuperuser
-```
 
-### 🚀 Run the server
 
-```bash
+ 🚀 Run the server
+
+bash
 python manage.py runserver
-```
+
 
 Visit: `http://127.0.0.1:8000`
 
----
 
-## ✅ Run Tests
 
-```bash
+✅ Run Tests
+
+bash
 python manage.py test
-```
+
 
 > Your project currently has 100% passing tests.
 
----
 
-## 📂 Project Structure
 
-```bash
+ 📂 Project Structure
+bash
+
 exams/
 ├── seats/                 # Main Django app
 │   ├── models.py          # Student model
@@ -110,11 +107,11 @@ exams/
 ├── media/
 ├── db.sqlite3
 └── manage.py
-```
 
----
 
-## 🧠 Future Improvements
+
+
+ 🧠 Future Improvements
 
 
 - 📲 Student search and filter options
@@ -122,15 +119,15 @@ exams/
 - 🌐 Full internationalization (i18n)
 - ☁️ Deploy to cloud (Render, PythonAnywhere)
 
----
 
-## 👨‍💻 Author
 
-**Abubakar Abdullahi Janka**  
+ 👨‍💻 Author
+
+Abubakar Abdullahi Janka  
 [GitHub](https://github.com/Janka50) • [LinkedIn](https://linkedin.com)
 
----
 
-## 🪪 License
+
+ 🪪 License
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
